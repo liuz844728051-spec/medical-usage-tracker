@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="robots" content="noindex,nofollow">
+<title>专属爱人 · 把照片发给爱你的人</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#573e43;background:#faf5f1}*{box-sizing:border-box}body{margin:0}button,input,textarea{font:inherit}button{cursor:pointer}main{max-width:640px;margin:0 auto;padding:32px 20px 40px}.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:650}.heart{display:grid;place-items:center;background:#a76c79;color:white;border-radius:13px;width:36px;height:36px;font-size:20px}.hero{padding:46px 0 28px}.eyebrow{font-size:10px;letter-spacing:2px;color:#a68d91}h1{font-size:clamp(28px,6.8vw,38px);line-height:1.5;letter-spacing:-1px;margin:15px 0 10px}p{font-size:14px;line-height:1.9;color:#927b7e}.card{background:#fffdfb;border:1px solid #eadee0;border-radius:24px;padding:26px;box-shadow:0 12px 45px #6c3c4710}.tag{font-size:11px;color:#a76c79;letter-spacing:2px}.card h2{font-size:21px;margin:9px 0 5px}.subtitle{font-size:13px;margin:5px 0 23px}.drop{display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;min-height:190px;border:1.5px dashed #d7b6be;border-radius:16px;background:#fcf5f5;cursor:pointer;position:relative}.drop input{position:absolute;opacity:0;width:1px;height:1px}.drop:focus-within{outline:2px solid #a76c79;outline-offset:3px}.drop .icon{font-size:29px;color:#a76c79}.drop strong{font-size:15px;font-weight:600}.drop small{font-size:12px;color:#ab9096}label.note{display:block;font-size:13px;margin-top:24px}textarea{margin-top:10px;display:block;width:100%;height:85px;padding:12px 14px;resize:vertical;border:1px solid #e8dcdf;border-radius:11px;background:#fffdfb;color:#573e43;outline-color:#b9808b}textarea::placeholder{color:#bca9ac}button.primary{border:0;background:#a76c79;color:white;border-radius:12px;padding:16px 20px;width:100%;font-weight:600;display:flex;justify-content:space-between;margin-top:24px}button.primary:hover{background:#955c69}button:disabled{opacity:.48;cursor:not-allowed}.files{margin-top:16px}.file{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f0e8e8;font-size:12px}.file .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.size{color:#a68d91;white-space:nowrap}.remove{border:0;background:transparent;color:#9d6c77;padding:5px;font-size:16px}.total{font-size:12px;color:#9c7c83;margin-top:12px}.fine{font-size:11px;line-height:1.8;color:#ab9799;margin:16px 0 0}.fine a{color:inherit;text-underline-offset:3px}.message{border-radius:12px;padding:13px 15px;line-height:1.8;font-size:13px;margin-top:18px;overflow-wrap:anywhere}.error{color:#a34e43;background:#fff0eb}.success{color:#5b7855;background:#eef5e8}.hidden{display:none!important}footer{text-align:center;font-size:11px;color:#b59d9e;line-height:1.9;margin-top:28px}.successmark{text-align:center;font-size:38px;color:#a76c79;margin-top:12px}.back{display:block;text-align:center;color:#a76c79;font-size:14px;text-underline-offset:5px;margin-top:20px}#honeypot{position:absolute;left:-10000px;opacity:0}.filenameinputs{display:none}#sent h2{text-align:center}@media(max-width:420px){main{padding:24px 18px}.hero{padding:38px 0 22px}.card{padding:22px 19px}.drop{min-height:180px}}
+</style>
+</head>
+<body><main>
+<header class="brand"><span class="heart" aria-hidden="true">♡</span> 专属爱人</header>
+<section class="hero"><div class="eyebrow">A LITTLE MOMENT, JUST FOR YOU</div><h1>把照片发给爱你的人</h1><p>把想分享的瞬间，轻轻放在这里。</p></section>
+<section class="card" id="compose"><div class="tag">ONLY FOR YOU</div><h2>这一次，只寄给你</h2><p class="subtitle">选择照片，以邮件附件送达收件人。</p>
+<form id="photoform" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_subject" value="专属爱人｜你收到新的照片"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" id="next"><input type="hidden" name="_url" id="formurl"><input type="hidden" name="来源" value="专属爱人照片页">
+<div id="honeypot" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+<label class="drop"><span class="icon" aria-hidden="true">↑</span><strong>点击选择照片</strong><small>支持多选 · 每次合计最多10MB</small><small>JPG / PNG / WebP / GIF / HEIC</small><input id="picker" type="file" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,.heic,.heif" aria-label="选择照片"></label>
+<div id="files" class="files"></div><div id="total" class="total hidden"></div><div id="attachments" class="filenameinputs"></div>
+<label class="note" for="note">留一句话 <span style="color:#bba8ab">（选填）</span></label><textarea id="note" name="留言" maxlength="1000" placeholder="今天也想把这一刻分享给你。"></textarea>
+<button class="primary" id="send" disabled type="submit"><span>把照片寄给你</span><span aria-hidden="true">↗</span></button>
+<div id="error" class="message error hidden" role="alert"></div>
+<p class="fine">照片将通过 <a href="https://formsubmit.co/" target="_blank" rel="noopener noreferrer">FormSubmit</a> 转发至收件人邮箱，不会在本页公开展示。请选择你有权分享的照片。邮件接口在境外，发送需要网络能够连接该服务。</p>
+</form></section>
+<section class="card hidden" id="sent"><div class="successmark" aria-hidden="true">♡</div><h2>照片已提交</h2><p>照片已提交给邮件转发服务，送达可能稍有延迟。</p><p class="fine">收件人首次使用须完成邮箱激活。首次激活前提交的照片可能无法保留；尚未完成激活时，请在激活后重新发送。</p><a class="back" href="./">再寄几张照片</a></section>
+<noscript><div class="message error">请开启浏览器的 JavaScript 功能后发送照片。</div></noscript>
+<footer>一张照片，一份惦念。<br>原图附件 · 仅发送给收件人</footer>
+</main>
+<script>
+'use strict';
+// Configure only the anonymous form identifier supplied after activation.
+// Never put the recipient's email address or a private API key here.
+const formId='';
+const form=document.getElementById('photoform'),picker=document.getElementById('picker'),list=document.getElementById('files'),box=document.getElementById('attachments'),total=document.getElementById('total'),error=document.getElementById('error'),send=document.getElementById('send');
+let files=[];const MAX=10*1024*1024;
+const allowed=f=>/^(image\/(jpeg|png|webp|gif|heic|heif))$/.test(f.type)||/\.(heic|heif)$/i.test(f.name);
+function showError(text){error.textContent=text;error.classList.toggle('hidden',!text)}
+function refresh(){list.replaceChildren();box.replaceChildren();let size=0;for(let i=0;i<files.length;i++){const f=files[i];size+=f.size;const row=document.createElement('div');row.className='file';const name=document.createElement('span');name.className='name';name.textContent=f.name;const s=document.createElement('span');s.className='size';s.textContent=(f.size/1024/1024).toFixed(2)+' MB';const remove=document.createElement('button');remove.type='button';remove.className='remove';remove.textContent='×';remove.setAttribute('aria-label','移除 '+f.name);remove.onclick=()=>{files.splice(i,1);showError('');refresh()};row.append(name,s,remove);list.append(row);const input=document.createElement('input');input.type='file';input.name='attachment_'+(i+1);const transfer=new DataTransfer();transfer.items.add(f);input.files=transfer.files;box.append(input)}total.classList.toggle('hidden',!files.length);total.textContent='共 '+files.length+' 张 · '+(size/1024/1024).toFixed(2)+' / 10 MB';send.disabled=!formId||!files.length||size>MAX;send.firstElementChild.textContent=files.length?'发送 '+files.length+' 张照片':'把照片寄给你';if(size>MAX)showError('照片合计超过10MB，请移除部分照片后分批发送。')}
+picker.onchange=()=>{showError('');const selected=Array.from(picker.files||[]);const valid=selected.filter(f=>allowed(f)&&f.size>0);files.push(...valid);if(valid.length!==selected.length)showError('部分文件不是支持的照片格式，已跳过。');picker.value='';refresh()};
+if(formId)form.action='https://formsubmit.co/'+encodeURIComponent(formId);
+const page=new URL(location.href);page.search='';page.hash='';document.getElementById('formurl').value=page.href;page.search='?sent=1';document.getElementById('next').value=page.href;
+form.addEventListener('submit',event=>{if(!formId){event.preventDefault();showError('收件通道尚未启用，请稍后再来。');return}if(!files.length||files.reduce((s,f)=>s+f.size,0)>MAX){event.preventDefault();showError('请选择合计10MB以内的照片。');return}send.disabled=true;send.firstElementChild.textContent='正在提交照片…'});
+window.addEventListener('pageshow',()=>{send.disabled=!formId||!files.length||files.reduce((s,f)=>s+f.size,0)>MAX;send.firstElementChild.textContent=files.length?'发送 '+files.length+' 张照片':'把照片寄给你'});
+if(!formId)showError('页面预览：收件通道尚未启用，目前不会发送照片。');
+if(new URLSearchParams(location.search).get('sent')==='1'){document.getElementById('compose').classList.add('hidden');document.getElementById('sent').classList.remove('hidden')}
+</script>
+</body></html>
