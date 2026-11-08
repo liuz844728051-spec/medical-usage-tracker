@@ -9,21 +9,21 @@
 </head>
 <body><main>
 <header class="brand"><span class="heart" aria-hidden="true">♡</span> 专属爱人</header>
-<section class="hero"><div class="eyebrow">A LITTLE MOMENT, JUST FOR YOU</div><h1>把照片发给爱你的人</h1><p>把想分享的瞬间，轻轻放在这里。</p></section>
-<section class="card" id="compose"><div class="tag">ONLY FOR YOU</div><h2>这一次，只寄给你</h2><p class="subtitle">选择照片，以邮件附件送达收件人。</p>
+<section class="hero"><h1>把照片发给爱你的人</h1><p>把想分享的瞬间，轻轻放在这里。</p></section>
+<section class="card" id="compose"><h2>这一次，只寄给你</h2>
 <form id="photoform" method="POST" enctype="multipart/form-data">
 <input type="hidden" name="_subject" value="专属爱人｜你收到新的照片"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" id="next"><input type="hidden" name="_url" id="formurl"><input type="hidden" name="来源" value="专属爱人照片页">
 <div id="honeypot" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
-<label class="drop"><span class="icon" aria-hidden="true">↑</span><strong>点击选择照片</strong><small>支持多选 · 每次合计最多10MB</small><small>JPG / PNG / WebP / GIF / HEIC</small><input id="picker" type="file" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,.heic,.heif" aria-label="选择照片"></label>
+<label class="drop"><span class="icon" aria-hidden="true">↑</span><strong>点击选择照片</strong><small>支持多选 · 每次合计最多10MB</small><input id="picker" type="file" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,.heic,.heif" aria-label="选择照片"></label>
 <div id="files" class="files"></div><div id="total" class="total hidden"></div><div id="attachments" class="filenameinputs"></div>
 <label class="note" for="note">留一句话 <span style="color:#bba8ab">（选填）</span></label><textarea id="note" name="留言" maxlength="1000" placeholder="今天也想把这一刻分享给你。"></textarea>
 <button class="primary" id="send" disabled type="submit"><span>把照片寄给你</span><span aria-hidden="true">↗</span></button>
 <div id="error" class="message error hidden" role="alert"></div>
-<p class="fine">照片将通过 <a href="https://formsubmit.co/" target="_blank" rel="noopener noreferrer">FormSubmit</a> 转发至收件人邮箱，不会在本页公开展示。请选择你有权分享的照片。邮件接口在境外，发送需要网络能够连接该服务。</p>
+
 </form></section>
-<section class="card hidden" id="sent"><div class="successmark" aria-hidden="true">♡</div><h2>照片已提交</h2><p>照片已提交给邮件转发服务，送达可能稍有延迟。</p><p class="fine">收件人首次使用须完成邮箱激活。首次激活前提交的照片可能无法保留；尚未完成激活时，请在激活后重新发送。</p><a class="back" href="./">再寄几张照片</a></section>
+<section class="card hidden" id="sent"><div class="successmark" aria-hidden="true">♡</div><h2>照片已提交</h2><p>谢谢你，把这一刻分享给我。</p><a class="back" href="./">再寄几张照片</a></section>
 <noscript><div class="message error">请开启浏览器的 JavaScript 功能后发送照片。</div></noscript>
-<footer>一张照片，一份惦念。<br>原图附件 · 仅发送给收件人</footer>
+
 </main>
 <script>
 'use strict';
